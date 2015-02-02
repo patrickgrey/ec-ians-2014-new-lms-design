@@ -14,6 +14,29 @@
 
 .ec-title-page {
     margin: 0 auto 1em auto;
-    padding-left: $ec-content-padding-small / 1.75;
-    // text-align: center;
+    // padding-left: $ec-content-padding-small / 1.75;
+    text-align: center;
 }
+
+.ec-youtube-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    margin-bottom: 2em;
+    height: 0;
+    overflow:hidden;
+    max-width: 100%;
+}
+
+.ec-youtube {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #eee;
+}
+
+.ec-activity-svg {
+    padding: 1em 0 2em 0;
+}
+

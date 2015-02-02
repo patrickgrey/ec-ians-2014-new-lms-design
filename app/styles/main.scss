@@ -49,7 +49,7 @@
  */
 $ec-container-small:              1em;
 $ec-header-height-small:          90px;
-$ec-content-padding-small:        0.5em;
+$ec-content-padding-small:        0.75em;
 $ec-nav-icons-small:              60px;
 
 /*------------------------------------*\
@@ -70,6 +70,7 @@ html, body {
 
 h1, h2, h3, h4, h5 {
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    color: #5ad;
 }
 
 
@@ -109,3 +110,8 @@ h1, h2, h3, h4, h5 {
  * #UTILITIES
  */
 @import "_utilities.scss";
+
+/**
+ * #FOOTER
+ */
+@import "_footer.scss";

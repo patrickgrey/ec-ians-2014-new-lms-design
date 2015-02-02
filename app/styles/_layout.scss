@@ -3,10 +3,29 @@
 \*------------------------------------*/
 .ec-container {
     position: relative;
+    background: #fff;
 }
 
 .ec-header {
     position: absolute;
     top: 0;
     width: 100%;
+}
+
+
+@media all and (max-width: 700px) {
+    
+    .cutsthemustard .ec-container {
+        transition: all .25s;
+        width: 100%;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 0;
+    }
+    
+    .cutsthemustard .active .ec-container {
+        transform: translateX(-90%);
+    }
+    
 }

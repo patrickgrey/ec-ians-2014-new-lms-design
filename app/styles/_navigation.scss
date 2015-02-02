@@ -180,3 +180,27 @@
     background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
 }
+
+@media all and (max-width: 700px) {
+    
+    .cutsthemustard .ec-nav-navigation {
+        width: 90%;
+        min-height: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        // background: #333;
+    }
+    
+    .cutsthemustard .pc-dismiss {
+        float: right;
+        margin: 2.8em 1em 0.5em 0.5em;
+        // margin-right: 1em;
+    }
+    
+    .cutsthemustard .primary-nav {
+        padding: 1em 0 0 0;
+    }
+    
+}

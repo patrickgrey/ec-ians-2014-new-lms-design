@@ -47,7 +47,7 @@
                     <a href="#settings" class="ec-button-settings ec-logo"><span class="ec-hidden-text">EUROCONTROL e-learning</span></a>
                 </h1>
                 
-                <a href="#navigation" class="ec-button-menu ec-icon-navigation"><span class="ec-hidden-text">navigation</span></a>
+                <a href="#navigation" class="ec-button-menu ec-icon-navigation ec-menu-toggle"><span class="ec-hidden-text">navigation</span></a>
                 
             </div>
             
@@ -55,8 +55,10 @@
             
                 <h2 class="ec-title-page">Steady and Level Flight</h2>
                 
-                <!-- <iframe class="ec-youtube" src="https://www.youtube.com/embed/P_0R0eWOKns?controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe> -->
-                
+                <div class='ec-youtube-container'>
+                    <!-- <iframe class="ec-youtube" src="https://www.youtube.com/embed/P_0R0eWOKns?controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe> -->
+                    <div class="ec-youtube"></div>
+                </div>
                 <div class="ec-content-padded">
                 
                     <p>In a steady and level flight:</p>
@@ -66,24 +68,27 @@
                     </ul>
                     <p>As the forces are in balance, the resultant force acting on the aircraft is Zero, and it will neither accelerate nor decelerate. In this situation the aeroplane is said to be in a state of &quot;<strong>Equilibrium</strong>&quot;.</p>
                     <p>The aircraft will continue flying at the same velocity, i.e. at the same speed and in the same direction, unless, for example, the pilot or a gust of wind alters this situation.</p>
-                    <p>The magnitude (size) of the lift (and therefore the weight) during cruise flight will be approximately 10 times greater than the drag (and thrust). This relationship of lift to drag is very important and is referred to as the <strong>Lift/Drag ratio</strong> (L/D ratio). The L/D ratio is in this case 10 to 1, i.e. the lift is 10 times greater than the drag. </p>
-                    
                 </div>
                 
-                <object data="images/ec-ACAS-t3p3a1.svg" type="image/svg+xml" width="100%" height="auto" ></object>
+                <object class="ec-activity-svg" data="images/ec-ACAS-t3p3a1.svg" type="image/svg+xml" width="100%" height="auto" ></object>
+                
+                <div class="ec-content-padded">
+                    <p>The magnitude (size) of the lift (and therefore the weight) during cruise flight will be approximately 10 times greater than the drag (and thrust). This relationship of lift to drag is very important and is referred to as the <strong>Lift/Drag ratio</strong> (L/D ratio). The L/D ratio is in this case 10 to 1, i.e. the lift is 10 times greater than the drag. </p>
+                </div>
                 
             </div>
             
             <div class="ec-footer ec-content-padded">
                 <p>&copy; EUROCONTROL 2015</p>
             </div>
+            
         </div>
         
         <nav class="ec-nav-navigation" role="navigation" id="navigation">
             
             <!-- <div class="ec-nav-module"> -->
                 
-                <a href="#top" class="ec-nav-dismiss">Dismiss</a>
+                <a href="#top" class="ec-nav-dismiss ec-menu-toggle">Dismiss</a>
                 
                 <ul class="ec-nav__links ec-nav-navigation__links">
                     <li class="ec-nav-navigation__item"><a href="#" class="primary-nav__link ec-nav-navigation__link ec-nav-navigation__next"><span class="ec-hidden-text">Next</span></a></li>
