@@ -1,0 +1,72 @@
+/*------------------------------------*\
+    #HEADER
+\*------------------------------------*/
+
+.ec-logo::before, .ec-icon-navigation::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: top 0s;
+}
+
+.ec-logo::before {
+    top: ($ec-header-height-small - 52px) / 2;
+    margin-left: -30px;
+    width: 60px;
+    height: 58.5px;
+    background-image: url(../images/logo/ec-color-print.png);
+    background-image: linear-gradient(transparent, transparent), url(../images/logo/ec-color-print.svg);
+    background-size: 60px 58.5px;
+}
+
+.ec-icon-navigation::before {
+    top: 23%;
+    margin-left: -1.5em;
+    height: 3em;
+    width: 3em;
+    background-image: url(../images/icons/address.png);
+    background-image: linear-gradient(transparent, transparent), url(../images/icons/address.svg);
+    background-size: 3em;
+}
+
+.ec-logo:hover::before, .ec-icon-navigation:hover::before {
+    background: none;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    margin: -0.75em 0 0 0;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transition: top 0.5s ease-out;
+}
+
+.ec-logo:hover::before {
+    content: "Settings";
+}
+
+.ec-icon-navigation:hover::before {
+    content: "Navigation";
+}
+
+.ec-button-settings, .ec-button-menu {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: $ec-header-height-small;
+    border-bottom: 1px solid #eee;
+}
+
+.ec-button-settings {
+    border-right: 1px solid #eee;
+}
+
+.ec-button-menu {
+    right: 0;
+}
+
+
+

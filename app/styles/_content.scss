@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    #HEADER
+\*------------------------------------*/
+
+.ec-content {
+    padding-top: $ec-header-height-small + 25px;
+}
+
+.ec-content-padded {
+    margin: 0 auto;
+    padding-left: $ec-content-padding-small;
+    padding-right: $ec-content-padding-small;
+}
+
+.ec-title-page {
+    margin: 0 auto 1em auto;
+    padding-left: $ec-content-padding-small / 1.75;
+    // text-align: center;
+}

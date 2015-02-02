@@ -1,0 +1,182 @@
+/*------------------------------------*\
+    #NAVIGATION
+\*------------------------------------*/
+
+[role="navigation"] {
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    color: white;
+}
+
+.ec-nav-settings {
+    background: #5ad;
+}
+
+.ec-nav-navigation {
+    background: #047;
+}
+
+.ec-nav-dismiss, .ec-nav-dismiss:hover, .ec-nav-dismiss:focus {
+    display: block;
+    padding: 0.5em 0 0.75em 0.5em;
+    font-size: 2em;
+    width: 100%;
+    background: #eee;
+    color: #5ad;
+}
+
+.ec-nav-dismiss::before {
+    content: "";
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    padding-right: 1.5em;
+    background: url('../images/icons/circle-with-cross.svg') no-repeat;
+}
+
+.ec-nav__links {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    font-size: 2em;
+    text-align: center;
+}
+
+.ec-nav-navigation__item {
+    width: 100%;
+}
+
+.primary-nav__link, .primary-nav__link:hover, .primary-nav__link:focus {
+    position: relative;
+    color: white;
+    display: block;
+    width: 100%;
+    padding: 1.5em 0 0.8em 0;
+    text-decoration: none;
+}
+
+.ec-nav-navigation__link, .ec-nav-navigation__link:hover, .ec-nav-navigation__link:focus {
+    padding: 1em 0 1em 0;
+}
+
+.primary-nav__link:focus {
+    text-decoration: underline;
+}
+
+.ec-nav-settings__link:hover {
+    // color: #5ad;
+    background: #047;
+}
+
+.ec-nav-navigation__link:hover {
+    // color: #047;
+    background: #5ad;
+}
+
+.ec-nav-settings__home::before, .ec-nav-settings__help::before, .ec-nav-settings__profile::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0.3em;
+    width: 0.8em;
+    height: 0.8em;
+    margin-left: -0.4em;
+    // padding-right: 1em;
+}
+
+.ec-nav-settings__home::before {
+    background: url('../images/icons/home.svg') no-repeat;
+}
+
+.ec-nav-settings__help::before {
+    background: url('../images/icons/help-with-circle.svg') no-repeat;
+}
+
+.ec-nav-settings__profile::before {
+    background: url('../images/icons/user.svg') no-repeat;
+}
+
+.ec-nav-navigation__links {
+    margin-top: $ec-header-height-small;
+    
+}
+
+.ec-nav-navigation__next, .ec-nav-navigation__next:hover, .ec-nav-navigation__next:focus,
+.ec-nav-navigation__previous, .ec-nav-navigation__previous:hover, .ec-nav-navigation__previous:focus {
+    position: absolute;
+    top: -$ec-header-height-small;
+    width: 50%;
+    height: $ec-header-height-small;
+    border-bottom: 1px solid #fff;
+}
+
+.ec-nav-navigation__complete, .ec-nav-navigation__complete:hover, .ec-nav-navigation__complete:focus {
+    height: $ec-header-height-small;
+    border-bottom: 1px solid #fff;
+}
+
+.ec-nav-navigation__next::before, .ec-nav-navigation__previous::before, .ec-nav-navigation__complete::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: ($ec-header-height-small - $ec-nav-icons-small) / 2;
+    width: $ec-nav-icons-small;
+    height: $ec-nav-icons-small;
+    margin-left: -$ec-nav-icons-small/2;
+}
+
+.ec-nav-navigation__next::before {
+    background: url('../images/icons/chevron-thin-right.svg') no-repeat;
+}
+
+.ec-nav-navigation__previous::before {
+    background: url('../images/icons/chevron-thin-left.svg') no-repeat;
+}
+
+.ec-nav-navigation__complete::before {
+    background: url('../images/icons/check.svg') no-repeat;
+}
+
+.ec-nav-navigation__next {
+    left: 50%;
+}
+
+.ec-nav-navigation__previous {
+    border-right: 1px solid #fff;
+}
+
+.ec-nav-navigation__progress, .ec-nav-navigation__progress:hover, .ec-nav-navigation__progress:focus {
+    text-align: left;
+    padding: 0.5em 0 0.5em 0;
+    font-size: 0.7em;
+}
+
+.ec-nav-navigation__progress::before {
+    content: "";
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    margin: 0 1em;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.ec-nav-navigation__progress-complete::before {
+    background: #fff;
+}
+
+.ec-nav-navigation__progress-started::before {
+    background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,0) 51%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(255,255,255,1)), color-stop(51%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0) 100%); /* IE10+ */
+    background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+}

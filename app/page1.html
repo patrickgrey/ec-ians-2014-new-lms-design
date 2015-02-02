@@ -30,6 +30,8 @@
         <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
+        
+        <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700|Roboto:300' rel='stylesheet' type='text/css'>
 
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -39,69 +41,77 @@
         
         <div class="ec-container">
         
-            <div class="ec-header">
-                <h1>EUROCONTROL e-learning</h1>
-                <object data="images/ec-color-print.svg" type="image/svg+xml" width="500" height="250" ></object>
-                <a href="#">Home, help &amp; profile</a>
-                <a href="#">Menu</a>
+            <div class="ec-header" id="top">
+                
+                <h1>
+                    <a href="#settings" class="ec-button-settings ec-logo"><span class="ec-hidden-text">EUROCONTROL e-learning</span></a>
+                </h1>
+                
+                <a href="#navigation" class="ec-button-menu ec-icon-navigation"><span class="ec-hidden-text">navigation</span></a>
+                
             </div>
             
             <div class="ec-content" role="main">
-                <h2>Steady and Level Flight</h2>
+            
+                <h2 class="ec-title-page">Steady and Level Flight</h2>
                 
-                <iframe class="ec-youtube" src="https://www.youtube.com/embed/P_0R0eWOKns?controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                <!-- <iframe class="ec-youtube" src="https://www.youtube.com/embed/P_0R0eWOKns?controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe> -->
                 
-                <p>In a steady and level flight:</p>
-                <ul>
-                    <li>The WEIGHT is balanced by the LIFT,</li>
-                    <li>The DRAG is balanced by the THRUST</li>
-                </ul>
-                <p>As the forces are in balance, the resultant force acting on the aircraft is Zero, and it will neither accelerate nor decelerate. In this situation the aeroplane is said to be in a state of &quot;<strong>Equilibrium</strong>&quot;.</p>
-                <p>The aircraft will continue flying at the same velocity, i.e. at the same speed and in the same direction, unless, for example, the pilot or a gust of wind alters this situation.</p>
-                <p>The magnitude (size) of the lift (and therefore the weight) during cruise flight will be approximately 10 times greater than the drag (and thrust). This relationship of lift to drag is very important and is referred to as the <strong>Lift/Drag ratio</strong> (L/D ratio). The L/D ratio is in this case 10 to 1, i.e. the lift is 10 times greater than the drag. </p>
+                <div class="ec-content-padded">
                 
-                <object data="images/ec-ACAS-t3p3a1.svg" type="image/svg+xml" width="500" height="250" ></object>
+                    <p>In a steady and level flight:</p>
+                    <ul>
+                        <li>The WEIGHT is balanced by the LIFT,</li>
+                        <li>The DRAG is balanced by the THRUST</li>
+                    </ul>
+                    <p>As the forces are in balance, the resultant force acting on the aircraft is Zero, and it will neither accelerate nor decelerate. In this situation the aeroplane is said to be in a state of &quot;<strong>Equilibrium</strong>&quot;.</p>
+                    <p>The aircraft will continue flying at the same velocity, i.e. at the same speed and in the same direction, unless, for example, the pilot or a gust of wind alters this situation.</p>
+                    <p>The magnitude (size) of the lift (and therefore the weight) during cruise flight will be approximately 10 times greater than the drag (and thrust). This relationship of lift to drag is very important and is referred to as the <strong>Lift/Drag ratio</strong> (L/D ratio). The L/D ratio is in this case 10 to 1, i.e. the lift is 10 times greater than the drag. </p>
+                    
+                </div>
+                
+                <object data="images/ec-ACAS-t3p3a1.svg" type="image/svg+xml" width="100%" height="auto" ></object>
                 
             </div>
             
-            <div class="ec-footer">
+            <div class="ec-footer ec-content-padded">
                 <p>&copy; EUROCONTROL 2015</p>
             </div>
         </div>
         
-        <nav role="navigation">
-        
-            <div class="ec-nav-site">
+        <nav class="ec-nav-navigation" role="navigation" id="navigation">
+            
+            <!-- <div class="ec-nav-module"> -->
                 
-                <a href="#top" class="ec-button ec-menu-toggle ec-dismiss">Dismiss menu</a>
+                <a href="#top" class="ec-nav-dismiss">Dismiss</a>
                 
-                <ul class="ec-nav-site-menu">
-                    <li class="ec-nav-site-menu__item"><a href="#" class="primary-nav__link">Home</a></li>
-                    <li class="ec-nav-site-menu__item"><a href="#" class="primary-nav__link">Help</a></li>
-                    <li class="ec-nav-site-menu__item"><a href="#" class="primary-nav__link">Profile</a></li>
+                <ul class="ec-nav__links ec-nav-navigation__links">
+                    <li class="ec-nav-navigation__item"><a href="#" class="primary-nav__link ec-nav-navigation__link ec-nav-navigation__next"><span class="ec-hidden-text">Next</span></a></li>
+                    <li class="ec-nav-navigation__item"><a href="#" class="primary-nav__link ec-nav-navigation__link ec-nav-navigation__previous"><span class="ec-hidden-text">Previous</span></a></li>
+                    <li class="ec-nav-navigation__item"><a href="#" class="primary-nav__link ec-nav-navigation__link ec-nav-navigation__complete"><span class="ec-hidden-text">Complete</span></a></li>
+                    <li class="ec-nav-navigation__item"><a href="#" class="primary-nav__link ec-nav-navigation__link ec-nav-navigation__progress ec-nav-navigation__progress-complete">Module overview</a></li>
+                    <li class="ec-nav-navigation__item"><a href="#" class="primary-nav__link ec-nav-navigation__link ec-nav-navigation__progress ec-nav-navigation__progress-complete">Page 1</a></li>
+                    <li class="ec-nav-navigation__item"><a href="#" class="primary-nav__link ec-nav-navigation__link ec-nav-navigation__progress ec-nav-navigation__progress-started">Page 2</a></li>
+                    <li class="ec-nav-navigation__item"><a href="#" class="primary-nav__link ec-nav-navigation__link ec-nav-navigation__progress">Page 3</a></li>
                 </ul>
                 
-            </div>
+            <!-- </div> -->
+            
         </nav>
         
-        <nav role="navigation">
-            
-            <div class="ec-nav-module">
+        <nav class="ec-nav-settings" role="navigation" id="settings">
+        
+            <!-- <div class="ec-nav-site"> -->
                 
-                <a href="#top" class="ec-button ec-menu-toggle ec-dismiss">Dismiss menu</a>
+                <a href="#top" class="ec-nav-dismiss">Dismiss</a>
                 
-                <ul class="ec-nav-module-menu">
-                    <li class="ec-nav-module__item"><a href="#" class="primary-nav__link">Next</a></li>
-                    <li class="ec-nav-module__item"><a href="#" class="primary-nav__link">Previous</a></li>
-                    <li class="ec-nav-module__item"><a href="#" class="primary-nav__link">Complete</a></li>
-                    <li class="ec-nav-module__item"><a href="#" class="primary-nav__link">Module overview</a></li>
-                    <li class="ec-nav-module__item"><a href="#" class="primary-nav__link">Page 1</a></li>
-                    <li class="ec-nav-module__item"><a href="#" class="primary-nav__link">Page 2</a></li>
-                    <li class="ec-nav-module__item"><a href="#" class="primary-nav__link">Page 3</a></li>
+                <ul class="ec-nav__links">
+                    <li class="ec-nav-settings__item"><a href="#" class="primary-nav__link ec-nav-settings__link ec-nav-settings__home">Home</a></li>
+                    <li class="ec-nav-settings__item"><a href="#" class="primary-nav__link ec-nav-settings__link ec-nav-settings__help">Help</a></li>
+                    <li class="ec-nav-settings__item"><a href="#" class="primary-nav__link ec-nav-settings__link ec-nav-settings__profile">Profile</a></li>
                 </ul>
                 
-            </div>
-            
+            <!-- </div> -->
         </nav>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
