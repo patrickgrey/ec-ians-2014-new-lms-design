@@ -2,6 +2,7 @@
 (function (win, doc) {
     'use strict';
     
+    // if (!win.addEventListener || window.innerWidth > 1100) {
     if (!win.addEventListener) {
         return;
     }

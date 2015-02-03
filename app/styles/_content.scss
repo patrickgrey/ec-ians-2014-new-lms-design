@@ -27,6 +27,12 @@
     max-width: 100%;
 }
 
+.ec-youtube-limiter {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .ec-youtube {
     position: absolute;
     top: 0;
@@ -37,6 +43,38 @@
 }
 
 .ec-activity-svg {
+    display: block;
     padding: 1em 0 2em 0;
 }
 
+@media all and (min-width: $ec-break-small-text-max) {
+    .ec-content-padded {
+        max-width: $ec-break-small-text-max;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media all and (min-width: $ec-break-medium) {
+    
+    .ec-youtube-limiter {
+        max-width: $ec-break-medium;
+        margin: 0 auto;
+    }
+    
+    .ec-activity-svg {
+        max-width: $ec-break-medium;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 auto;
+    }
+}
+
+@media all and (min-width: $ec-break-switch-nav) {
+    
+    .ec-content {
+        padding-top: 1em;
+    }
+    
+}

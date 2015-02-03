@@ -12,8 +12,8 @@
     width: 100%;
 }
 
-
-@media all and (max-width: 700px) {
+// discount non media query browsers
+@media all and (min-width: 0) {
     
     .cutsthemustard .ec-container {
         transition: all .25s;
@@ -36,7 +36,8 @@
     .cutsthemustard .active-nav .ec-nav-navigation {
         z-index: 1;
     }
-    
+    // hide the menu that isn't active - maybe this should be opacity
+    // to prevent page jumps?
     .cutsthemustard .active-nav .ec-nav-settings {
         display: none;
     }
@@ -56,5 +57,10 @@
     .cutsthemustard .active-settings {
         background: #5ad;
     }
+    
+}
+
+
+@media all and (min-width: $ec-break-switch-nav) {
     
 }

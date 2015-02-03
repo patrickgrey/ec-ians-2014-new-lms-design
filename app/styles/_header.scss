@@ -68,5 +68,20 @@
     right: 0;
 }
 
-
+@media all and (min-width: $ec-break-switch-nav) {
+    
+    .ec-button-settings, .ec-button-menu {
+        position: fixed;
+        width: $ec-button-width-medium;
+    }
+    
+    .ec-button-menu {
+        border-left: 1px solid #eee;
+    }
+    
+    .cutsthemustard .ec-button-menu {
+        right: 0;
+    }
+    
+}
 
