@@ -24,8 +24,37 @@
         right: 0;
     }
     
-    .cutsthemustard .active .ec-container {
+    // Move the body the correct way for each navigation
+    .cutsthemustard .active-nav .ec-container {
         transform: translateX(-90%);
+    }
+    
+    .cutsthemustard .active-settings .ec-container {
+        transform: translateX(90%);
+    }
+    // Set the z-index of the navigation menus so the correct one is visible
+    .cutsthemustard .active-nav .ec-nav-navigation {
+        z-index: 1;
+    }
+    
+    .cutsthemustard .active-nav .ec-nav-settings {
+        display: none;
+    }
+    
+    .cutsthemustard .active-settings .ec-nav-navigation {
+        display: none;
+    }
+    
+    .cutsthemustard .active-settings .ec-nav-settings {
+        z-index: 1;
+    }
+    
+    .cutsthemustard .active-nav {
+        background: #047;
+    }
+    
+    .cutsthemustard .active-settings {
+        background: #5ad;
     }
     
 }
