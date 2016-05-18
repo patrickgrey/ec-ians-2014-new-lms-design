@@ -13,6 +13,16 @@
     padding-right: $ec-content-padding-small;
 }
 
+.ec-content-padded.ec-content-media-placeholder {
+  background: #eee;
+  border: 1px solid #999;
+  margin-bottom: 1em;
+}
+
+.ec-content-media-placeholder p{
+  padding: 1em;
+}
+
 .ec-title-page {
     margin: 0 auto 1em auto;
     // padding-left: $ec-content-padding-small / 1.75;
