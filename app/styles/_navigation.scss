@@ -11,10 +11,12 @@
 }
 
 .ec-nav-settings {
+    position: relative;
     background: #5ad;
 }
 
 .ec-nav-navigation {
+    position: relative;
     background: #047;
 }
 
@@ -27,7 +29,8 @@
     color: #5ad;
 }
 
-.ec-nav-dismiss:hover, .ec-nav-dismiss:focus {
+.ec-nav-dismiss:hover,
+.ec-nav-dismiss:focus {
     background: #eee;
     color: #5ad;
 }
@@ -64,7 +67,8 @@
     text-decoration: none;
 }
 
-.primary-nav__link:hover, .primary-nav__link:focus {
+.primary-nav__link:hover,
+.primary-nav__link:focus {
     color: white;
     text-decoration: none;
 }
@@ -85,7 +89,9 @@
     background: #5ad;
 }
 
-.ec-nav-settings__home::before, .ec-nav-settings__help::before, .ec-nav-settings__profile::before {
+.ec-nav-settings__home::before,
+.ec-nav-settings__help::before,
+.ec-nav-settings__profile::before {
     content: "";
     display: block;
     position: absolute;
@@ -111,10 +117,10 @@
 
 .ec-nav-navigation__links {
     margin-top: $ec-header-height-small;
-    
+    z-index:2;
 }
 
-.ec-nav-navigation__next, 
+.ec-nav-navigation__next,
 .ec-nav-navigation__previous{
     position: absolute;
     top: -$ec-header-height-small;
@@ -128,12 +134,15 @@
     border-bottom: 1px solid #fff;
 }
 
-.ec-nav-navigation__complete:hover, .ec-nav-navigation__complete:focus {
+.ec-nav-navigation__complete:hover,
+.ec-nav-navigation__complete:focus {
     background: green;
     border-bottom: 1px solid #fff;
 }
 
-.ec-nav-navigation__next::before, .ec-nav-navigation__previous::before, .ec-nav-navigation__complete::before {
+.ec-nav-navigation__next::before,
+.ec-nav-navigation__previous::before,
+.ec-nav-navigation__complete::before {
     content: "";
     display: block;
     position: absolute;
@@ -194,6 +203,24 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
 }
 
+.ec-nav-previous-title, .ec-nav-next-title {
+    position: absolute;
+    top: -1px;
+    right: -20em;
+    display: none;
+    width: 20em;
+    padding: 1em;
+    height: $ec-header-height-small + 1px;
+    background: #fff;
+    border: 1px solid #eee;
+    transition: right .25s;
+    // display: none;
+}
+
+.ec-nav-previous-title {
+    top: $ec-header-height-small - 1px;
+}
+
 // discount non media query browsers
 @media all and (min-width: 0) {
     
@@ -211,8 +238,20 @@
 
 @media all and (min-width: $ec-break-switch-nav) {
     
+    .ec-show-next-title .ec-nav-next-title {
+        display: block;
+        right: $ec-button-width-medium - 1px;
+    }
+
+    .ec-show-previous-title .ec-nav-previous-title {
+        display: block;
+        right: $ec-button-width-medium - 1px;
+    }
+    
+    // bring nav buttons to top so can see without reveal
     .cutsthemustard .ec-nav-navigation {
-        width: $ec-button-width-medium;
+        // width: $ec-button-width-medium;
+        // position: fixed;
         min-height: 0;
         z-index: 3;
         top: $ec-header-height-small;
@@ -220,15 +259,46 @@
         background: none;
     }
     
-    .cutsthemustard .ec-nav-dismiss {
-        display: none;
-    }
-    
     .cutsthemustard .ec-nav-progress__links {
-        display: none;
+        // display: none;
+        background: #047;
+        position: absolute;
+        top: $ec-header-height-small/1.5;
+        right: -20em;
+        // right: $ec-button-width-medium;
+        width: 20em;
+        transition: right .25s;
+        // z-index: 5;
     }
     
-    .cutsthemustard .ec-nav-navigation__next, .cutsthemustard .ec-nav-navigation__previous, .cutsthemustard .ec-nav-navigation__complete {
+    .cutsthemustard .ec-nav-dismiss {
+        position: absolute;
+        top: 0;
+        right: -20em;
+        width: 20em;
+        height: $ec-header-height-small/1.5;
+        border-right: #fff;
+        transition: right .25s;
+    }
+    
+    .cutsthemustard .active-nav .ec-nav-navigation {
+        z-index: 3;
+    }
+    
+    .cutsthemustard .active-nav .ec-nav-progress__links {
+        right: $ec-button-width-medium;
+    }
+    
+    .cutsthemustard .active-nav .ec-nav-dismiss {
+        right: $ec-button-width-medium;
+    }
+    
+    
+    
+    // reset nav butttons to fixed top
+    .cutsthemustard .ec-nav-navigation__next,
+    .cutsthemustard .ec-nav-navigation__previous,
+    .cutsthemustard .ec-nav-navigation__complete {
         position: fixed;
         // top: 0;
         left: auto;
@@ -240,6 +310,7 @@
         background: #fff;
     }
     
+    // set fixed position of nav buttons
     .cutsthemustard .ec-nav-navigation__next {
         top: $ec-header-height-small;
     }
@@ -248,6 +319,11 @@
         top: $ec-header-height-small*2;
     }
     
+    .cutsthemustard .ec-nav-navigation__complete {
+        top: $ec-header-height-small*3;
+    }
+    
+    // dark icons for nav buttons
     .cutsthemustard .ec-nav-navigation__previous::before {
         background: url('../images/icons/chevron-thin-left-dark.svg') no-repeat;
     }
@@ -260,41 +336,22 @@
         background: url('../images/icons/check-dark.svg') no-repeat;
     }
     
-    .cutsthemustard .ec-nav-navigation__complete {
-        top: $ec-header-height-small*3;
+    
+    // Hover button effects
+    .cutsthemustard .ec-nav-navigation__previous:hover,
+    .cutsthemustard .ec-nav-navigation__previous:focus,
+    .cutsthemustard .ec-nav-navigation__next:hover,
+    .cutsthemustard .ec-nav-navigation__next:focus {
+        background: #eee;
     }
     
-    /* .cutsthemustard .ec-nav-navigation__links {
-        margin-top: 0;
-        padding-top: $ec-header-height-small;
-        overflow: hidden;
+    .cutsthemustard .ec-nav-navigation__complete:hover,
+    .cutsthemustard .ec-nav-navigation__complete:focus {
+        background: #9d9;
     }
     
-    
-    
-    .cutsthemustard .ec-nav-navigation__progress {
-        margin-left: $ec-button-width-medium*4;
-        background: #047;
+    .cutsthemustard .ec-nav-settings {
+        width: 20em;
     }
-    
-    .cutsthemustard .ec-nav-navigation__previous {
-        right: $ec-button-width-medium*2;
-    }
-    
-    .cutsthemustard .ec-nav-navigation__next {
-        right: $ec-button-width-medium;
-    }
-    
-    .cutsthemustard .ec-nav-navigation__complete {
-        right: 0;
-    } */
-    
-    /* .ec-nav__links {
-        position: static;
-    }
-    
-    .ec-nav-navigation__next, .ec-nav-navigation__next:hover, .ec-nav-navigation__next:focus {
-        top: 0;
-    } */
     
 }

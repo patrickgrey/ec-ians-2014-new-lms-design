@@ -1,5 +1,5 @@
 /* jshint devel:true */
-(function (win, doc) {
+(function (win, doc, $) {
     'use strict';
     
     // if (!win.addEventListener || window.innerWidth > 1100) {
@@ -38,4 +38,22 @@
     doc.documentElement.className += ' ' + enhanceclass;
     doc.addEventListener('click', navListener, false);
     
-}(this, this.document));
+    $('.ec-nav-navigation__next').hover(
+        function(){
+            $('html').addClass('ec-show-next-title');
+        },
+        function(){
+            $('html').removeClass('ec-show-next-title');
+        }
+    );
+    
+    $('.ec-nav-navigation__previous').hover(
+        function(){
+            $('html').addClass('ec-show-previous-title');
+        },
+        function(){
+            $('html').removeClass('ec-show-previous-title');
+        }
+    );
+    
+}(this, this.document, $));

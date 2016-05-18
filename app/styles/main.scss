@@ -1,10 +1,10 @@
 /**
  * This site's responsive header...
- * (This is a main comment to descript what happens to the main parts of the 
+ * (This is a main comment to descript what happens to the main parts of the
  * site). Complete after design finished.
  */
 
-
+ 
 
 
 
@@ -88,7 +88,22 @@ h1, h2, h3, h4, h5 {
     #COMPONENTS
 \*------------------------------------*/
 
+.ec-register {
+    display: block;
+    width: 10em;
+    margin: 0.5em auto 1.5em auto;
+    padding: 1em 2em;
+    background: green;
+    color: #fff;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    text-align: center;
+    border-radius:0.5em;
+}
 
+.ec-register:hover {
+    color: #fff;
+}
 
 
 /**
@@ -122,3 +137,8 @@ h1, h2, h3, h4, h5 {
  * #FOOTER
  */
 @import "_footer.scss";
+
+/**
+ * #HELP
+ */
+@import "_help.scss";

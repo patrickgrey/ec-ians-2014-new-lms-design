@@ -5,6 +5,7 @@ var gulp = require('gulp');
 
 // load plugins
 var $ = require('gulp-load-plugins')();
+var browserSync = require('browser-sync').create();
 
 gulp.task('styles', function () {
     return gulp.src('app/styles/main.scss')
@@ -76,23 +77,49 @@ gulp.task('default', ['clean'], function () {
     gulp.start('build');
 });
 
-gulp.task('connect', function () {
-    var connect = require('connect');
-    var app = connect()
-        .use(require('connect-livereload')({ port: 35729 }))
-        .use(connect.static('app'))
-        .use(connect.static('.tmp'))
-        .use(connect.directory('app'));
+// gulp.task('connect', function () {
+//     var connect = require('connect');
+//     var app = connect()
+//         .use(require('connect-livereload')({ port: 35729 }))
+//         .use(connect.static('app'))
+//         .use(connect.static('.tmp'))
+//         .use(connect.directory('app'));
+//
+//     require('http').createServer(app)
+//         .listen(9000)
+//         .on('listening', function () {
+//             console.log('Started connect web server on http://localhost:9000');
+//         });
+// });
+//
+// gulp.task('serve', ['connect', 'styles'], function () {
+//     require('opn')('http://localhost:9000');
+// });
 
-    require('http').createServer(app)
-        .listen(9000)
-        .on('listening', function () {
-            console.log('Started connect web server on http://localhost:9000');
-        });
-});
+gulp.task('serve', ['styles', 'scripts'], function () {
+  
+  browserSync.init({
+    notify: false,
+    port: 9000,
+    server: {
+      baseDir: ['.tmp', 'app'],
+      routes: {
+        '/bower_components': 'bower_components'
+      }
+    }
+  });
 
-gulp.task('serve', ['connect', 'styles'], function () {
-    require('opn')('http://localhost:9000');
+  gulp.watch([
+    'app/**/*.html',
+    'app/images/**/*',
+    '.tmp/fonts/**/*'
+  ]).on('change', browserSync.reload);
+
+  gulp.watch('app/styles/**/*.scss', ['styles']);
+  gulp.watch('app/**/*.js', ['scripts']);
+  // gulp.watch('app/fonts/**/*', ['fonts']);
+  // gulp.watch('bower.json', ['wiredep', 'fonts']);
+  
 });
 
 // inject bower components
@@ -113,22 +140,22 @@ gulp.task('wiredep', function () {
         .pipe(gulp.dest('app'));
 });
 
-gulp.task('watch', ['connect', 'serve'], function () {
-    var server = $.livereload();
-
-    // watch for changes
-
-    gulp.watch([
-        'app/*.html',
-        '.tmp/styles/**/*.css',
-        'app/scripts/**/*.js',
-        'app/images/**/*'
-    ]).on('change', function (file) {
-        server.changed(file.path);
-    });
-
-    gulp.watch('app/styles/**/*.scss', ['styles']);
-    gulp.watch('app/scripts/**/*.js', ['scripts']);
-    gulp.watch('app/images/**/*', ['images']);
-    gulp.watch('bower.json', ['wiredep']);
-});
+// gulp.task('watch', ['connect', 'serve'], function () {
+//     var server = $.livereload();
+//
+//     // watch for changes
+//
+//     gulp.watch([
+//         'app/*.html',
+//         '.tmp/styles/**/*.css',
+//         'app/scripts/**/*.js',
+//         'app/images/**/*'
+//     ]).on('change', function (file) {
+//         server.changed(file.path);
+//     });
+//
+//     gulp.watch('app/styles/**/*.scss', ['styles']);
+//     gulp.watch('app/scripts/**/*.js', ['scripts']);
+//     gulp.watch('app/images/**/*', ['images']);
+//     gulp.watch('bower.json', ['wiredep']);
+// });

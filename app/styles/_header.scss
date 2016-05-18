@@ -17,8 +17,8 @@
     margin-left: -30px;
     width: 60px;
     height: 58.5px;
-    background-image: url(../images/logo/ec-color-print.png);
-    background-image: linear-gradient(transparent, transparent), url(../images/logo/ec-color-print.svg);
+    // background-image: url(../images/icons/ec-color-print.png);
+    // background-image: linear-gradient(transparent, transparent), url(../images/icons/home.svg);
     background-size: 60px 58.5px;
 }
 
@@ -65,17 +65,28 @@
 }
 
 .ec-button-menu {
+    position: fixed;
     right: 0;
+    
+}
+
+.ec-button-settings-index {
+    width: 100%;
+    border-right: none;
 }
 
 @media all and (min-width: $ec-break-switch-nav) {
     
-    .ec-button-settings, .ec-button-menu {
+    .ec-button-settings-index {
+        border-right: 1px solid #eee;
+    }
+    
+    .cutsthemustard .ec-button-settings, .ec-button-menu {
         position: fixed;
         width: $ec-button-width-medium;
     }
     
-    .ec-button-menu {
+    .cutsthemustard .ec-button-menu {
         border-left: 1px solid #eee;
     }
     
@@ -84,4 +95,3 @@
     }
     
 }
-

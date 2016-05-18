@@ -4,6 +4,7 @@
 .ec-container {
     position: relative;
     background: #fff;
+    min-height: 100%;
 }
 
 .ec-header {
@@ -62,5 +63,12 @@
 
 
 @media all and (min-width: $ec-break-switch-nav) {
+    .cutsthemustard .active-nav .ec-container {
+        transform: translateX(0);
+        
+    }
     
+    .cutsthemustard .active-settings .ec-container {
+        transform: translateX(20em);
+    }
 }
